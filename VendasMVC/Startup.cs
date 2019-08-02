@@ -41,8 +41,11 @@ namespace VendasMVC
             services.AddDbContext<VendasMVCContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("VendasMVCContext"),builder =>
                         builder.MigrationsAssembly("VendasMVC")));
+
+                
             services.AddScoped<SeedingService>();
             services.AddScoped<SellerService>();
+            services.AddScoped<DepartmentService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
